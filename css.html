@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>question 3</title>
+	</head>
+	<body>
+		<p>translation of text</p>
+		<p id = "res"></p>
+		<script>
+function isUpperCase(i){
+return i == i.toUpperCase();
+}
+			function translate(a){
+				let str = "";
+				
+				for(const i of a){
+					if(isUpperCase(i)){
+					let c = i.toLowerCase();
+					if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c==" ") {
+						c = i.toUpperCase();
+						str += c;
+					}
+					else {
+						c = i.toUpperCase();
+						str = str + c + 'o' + c;
+					}
+					}
+					else{
+						let c = i.toLowerCase();
+					if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c==" ") {
+						str += c;
+					}
+					else str = str + c + 'o' + c;
+						}
+				}
+				return str;
+			}
+			let str = prompt("Enter string: ");
+				
+			document.getElementById("res").innerHTML = translate(str);
+		</script>
+	</body>
+</html>
